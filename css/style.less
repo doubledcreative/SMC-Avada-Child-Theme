@@ -1,0 +1,398 @@
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+SMC Financial
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Less Mixins */
+
+.transition (@transition: all 0.2s ease-in-out) {
+	-webkit-transition:@transition;
+	-moz-transition:@transition;
+	-o-transition:@transition;
+	transition:@transition;
+}
+
+.transform(@string){
+	-webkit-transform:@string;
+	-moz-transform:@string;
+	-ms-transform:@string;
+	-o-transform:@string;
+	transform:@string;
+}
+
+.border-radius (@border-radius: 3px) {
+	-webkit-border-radius:@border-radius;
+	-moz-border-radius:@border-radius;
+	border-radius:@border-radius;
+}
+
+.box-shadow (@box-shadow: rgba(0,0,0,0)) {
+	-webkit-box-shadow:@box-shadow;
+	-moz-box-shadow:@box-shadow;
+	box-shadow:@box-shadow;
+}
+
+.bg-clip(){
+	-moz-background-clip:padding!important;
+	-webkit-background-clip:padding!important;
+	background-clip:padding-box!important;
+}
+
+.gradient (@degree: -45deg, @startColor: #000, @endColor: #FFF) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, @degree, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(@degree, @startColor, @endColor);
+	background: -moz-linear-gradient(@degree, @startColor, @endColor);
+	background: -ms-linear-gradient(@degree, @startColor, @endColor);
+	background: -o-linear-gradient(@degree, @startColor, @endColor);
+}
+
+.uppercase(){text-transform:uppercase!important;}
+
+.font1(){font-family:'Avenir Next W01'!important;}
+.font2(){font-family:'Museo Slab W01'!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* SITE COLOURS */
+
+@white:  		#FFF!important;				/* White */
+@black:			#000!important;				/* Black */
+@navy1:			#232f41!important;
+@green1:		#36ab69!important;
+@grey1:			#f4f4f5!important;			/* Light Background Grey */
+@grey2:			#e9eaec!important;			/* Light Background Grey 2 - Use as main html BG */
+@grey3:			#7a8488!important;			/* Paragraph Grey */
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* FONTS */
+
+/* Font Family */
+
+h1, h2, h3, h3, h4, h5, h6{.font2()}
+p{.font1(); font-weight:100!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GLOBAL STYLES */
+
+body{-webkit-font-smoothing:subpixel-antialiased!important;}
+a:hover{.transition (@transition: all 0.2s ease-in-out);}
+.hover-type-zoomin:hover{
+	.fusion-column-inner-bg-image{opacity:1!important;}
+}
+iframe{border:none!important;}
+
+/* SVG Images */
+.ddc-svg{width:100%;height:auto;}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* NAVIGATION */
+
+.fusion-header-wrapper{
+	.fusion-header{padding-left:40px;padding-right:40px;background:@navy1!important;
+		.fusion-logo{
+			img{width:450px!important;}	
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* CONTAINERS */
+
+.ddc-container-0{margin: 0!important; padding: 0!important;}
+.ddc-container-1{margin: 40px 80px 20px!important; padding: 0!important;}
+.ddc-container-2{margin: 40px auto!important; padding: 0 80px!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* COLUMNS */
+
+.ddc-column-0{margin: 0!important; padding: 0!important;}
+.ddc-column-1{margin-bottom: 20px!important;}
+.ddc-column-2{margin-bottom: 40px!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GRAVITY FORMS */
+
+.gform_wrapper{margin:0 auto!important;
+	
+	.gform_body{width:100%!important;
+		.gform_fields{
+			.gfield{padding:0!important; margin-top:0!important; margin-bottom:25px!important;
+				.ginput_container{
+					input, textarea{padding:10px 15px!important; margin:0!important; .font1(); font-size:18px!important; width:100%!important; color: @black!important;
+						&:focus{outline:none!important; .transition();}
+					}
+					input{height:60px!important;}
+					textarea{padding:20px!important;}
+					.name_first, .name_last{
+						label{display:none;}
+					}
+					#input_2_5, #input_2_6{color: @white!important;}
+				}
+			}
+		}
+	}
+	
+	div.gform_body {
+		ul.gform_fields {
+			li.gfield.gfield_html{border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px!important;}
+		}
+	}
+	
+	.gform_footer{width:100%; display:block; margin:10px 0 0 0!important; padding:0!important;
+		input[type=submit]{.font1(); font-weight: 600!important; display:block!important; margin:0 auto!important; font-size:14px!important; line-height:17px!important; padding:13px 29px!important; .border-radius();
+			&:hover{.transition(); color: @white!important;}
+		}
+	}
+	
+}
+
+
+/* Float Left and Right for Single Line Text Fields */
+#field_1_1, #field_1_2{width:49%;clear:none!important;}
+#field_1_1{float:left;}
+#field_1_2{float:right;}
+
+
+/* Placeholder Font Colour */
+::-webkit-input-placeholder{color:@black;}
+:-moz-placeholder{color:@black;}
+::-moz-placeholder{color:@black;}
+:-ms-input-placeholder{color:@black;}
+.placeholder{color:@black;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GRAVITY VALIDATION FORM 
+
+/* Validation Styling 
+.validation_error{display: none;}
+
+
+/* Body & Field Styling 
+.gform_body{
+	li.gfield.gfield_error{border: none!important;}
+	.validation_message {color: @white; font-family: 'Avenir Next W01'!important; margin: 10px 0 0!important; margin: 0 15px!important; font-size: 12px;}
+	.gform_fields, gfield, gfield_contains_required{
+		.gfield_error{background-color: @green2; margin-bottom: 20px!important;			
+			.ginput_container{margin: 0!important; max-width: 100%!important;
+				.textarea, .large{border: 2px solid @green2!important;}
+			}
+			.ginput_container_text{margin: 0!important; max-width: 100%!important;
+				.gfield_description, ginput_container{margin: 0!important; .font1();}
+			}
+		}
+		
+	}
+}
+
+
+/* Validation Fields - Width 100% 
+#field_1_6{width:100%; clear:none!important;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1600px ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (min-width: 1600px) {
+			
+	
+	/* GLOBAL STYLES */
+	
+	/* Flip Box Element */
+	.ddc-flip-box{margin-bottom: 0!important; min-height: 400px;
+		.fusion-flip-box-wrapper{
+			.fusion-flip-box{
+				.flip-box-inner-wrapper{margin-bottom: 0!important;
+					.flip-box-front{padding:50px!important; min-height: 400px; display: table!important;
+						.flip-box-front-inner{display: table-cell; vertical-align: middle;}
+					}
+					.flip-box-back{padding:50px!important; min-height: 400px; display: table!important;
+						.flip-box-back-inner{display: table-cell; vertical-align: middle;
+							.ddc-button{.font1(); display: inline-block!important; .border-radius();}
+						}
+					}
+				}
+			}
+		}		
+	}
+	
+		
+}	
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1200px ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1200px) {
+			
+
+
+		
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024px ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1024px) {
+	
+		
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 800px) {
+	
+	
+	/* CONTAINERS */
+
+	.ddc-container-0{margin: 30px!important; padding: 0!important;}
+	.ddc-container-1{margin: 0 0 -3%!important; padding: 0!important;}
+	.ddc-container-2{margin: 10% auto!important; padding: 0 10%!important;}
+	
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/* COLUMNS */
+
+	.ddc-column-0{margin: 0!important; padding: 0!important;}
+	.ddc-column-1{margin-bottom: 20px!important;}
+	.ddc-column-2{margin-bottom: 30px!important;}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* GLOBAL STYLES */
+	
+	/* Main Top & Bottom Padding */
+	#main {padding: 0!important;}
+	
+
+	
+	/* Footer - Copyright Area Padding */
+	.fusion-footer-copyright-area{padding: 40px 30px 30px!important;
+		.fusion-social-links-footer{margin-top: 0!important;}
+	}
+	
+	/* Float Left and Right for Single Line Text Fields */
+	#field_1_1, #field_1_2{width:100%;}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////	
+		
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+	
+	
+	/* FONTS */
+
+	/* Font Family */
+	p{font-size: 16px!important; line-height: 26px!important;}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* CONTAINERS */
+
+	.ddc-container-0{margin: 0!important; padding: 0!important;}
+	.ddc-container-1{margin: 0 0 -3%!important; padding: 0!important;}
+	.ddc-container-2{margin: 30px auto!important; padding: 0 30px!important;}
+	
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/* COLUMNS */
+
+	.ddc-column-0{margin: 0!important; padding: 0!important;}
+	.ddc-column-1{margin-bottom: 20px!important;}
+	.ddc-column-2{margin-bottom: 20px!important;}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* GLOBAL STYLES */
+	
+	/* Main Top & Bottom Padding */
+	#main {padding: 0!important;}
+	
+	/* Social Element Icons */
+	.ddc-social-icons{margin-top: 30px;
+		.boxed-icons{
+			.fusion-social-networks-wrapper{
+				a{font-size: 16px; width: 40px!important; border-radius: 20px!important;}
+			}
+		}
+	}
+	
+	/* Footer - Copyright Area Padding */
+	.fusion-footer-copyright-area{padding: 30px 30px 20px!important;
+		.fusion-social-links-footer{margin-top: 0!important;
+			.fusion-social-networks{
+				.fusion-social-networks-wrapper{
+					a{font-size: 30px!important;}
+				}
+			}
+		}
+	}
+	
+
+}
