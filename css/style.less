@@ -32,6 +32,8 @@ Contents
 
 /* Less Mixins */
 
+@charset "utf-8";
+
 .transition (@transition: all 0.2s ease-in-out) {
 	-webkit-transition:@transition;
 	-moz-transition:@transition;
@@ -102,7 +104,9 @@ Contents
 /* FONTS */
 
 /* Font Family */
-h1, h2, h3, h3{.font2();}
+h1, h2, h3, h3{.font2();
+	a{.font2();border-bottom:1px dotted @grey3;}
+}
 h4, h5, h6, p, a{.font1(); -webkit-font-smoothing:subpixel-antialiased;}
 
 
@@ -119,7 +123,7 @@ a:hover{.transition (@transition: all 0.2s ease-in-out);}
 iframe{border:none!important;}
 
 /* Main Site Side Padding */
-#main {padding-left: 0; padding-right: 0;}
+#main {padding-left:0!important;padding-right:0!important;}
 
 /* SVG Images */
 .ddc-svg{width:100%; height:auto;}
@@ -203,7 +207,8 @@ iframe{border:none!important;}
 .ddc-quotes-2{padding: 9px 17px 12px 17px!important; width: 43%!important; margin: 40px!important; min-width: 43%!important; max-width: 43%!important; font-size: 20px!important; line-height: 25px!important; background-color: @navy1;}
 
 /* Revolution Slider - Overlay */
-.tp-dottedoverlay.twoxtwo {background: url(none); background-color: rgba(0, 0, 0, 0.4) !important;}
+.tp-mask-wrap{background-color: rgba(0, 0, 0, 0.4) !important;}
+/*.tp-dottedoverlay.twoxtwo {background: url(none); background-color: rgba(0, 0, 0, 0.4) !important;}*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,7 +216,7 @@ iframe{border:none!important;}
 
 /* NAVIGATION */
 
-/* Main Header Logo*/
+/* Main Header Logo */
 .fusion-header-wrapper{
 	.fusion-header{padding-left: 30px; padding-right: 30px;
 		.fusion-logo{
@@ -320,7 +325,7 @@ iframe{border:none!important;}
 
 /* Blog Introduction */
 .category-1{
-	#content:before{margin: 0 15% 20px; .font2(); font-size: 28px; line-height: 42px; color: @navy1; display: block; text-align: center; content: "What’s important to you is important to us. Here’s our latest views and thinking on finance, business, lifestyle, travel and more. ";}
+	#content:before{margin: 0 15% 20px; .font2(); font-size: 28px; line-height: 42px; color: @navy1; display: block; text-align: center; content: "What's important to you is important to us. Here's our latest views and thinking on finance, business, lifestyle, travel and more.";}
 }
 
 /* Blog - Side Padding */
@@ -346,7 +351,7 @@ iframe{border:none!important;}
 
 /* Blog Single Post - Styling */
 .single-post{
-	#main{padding-left: 10%; padding-right: 10%;
+	#main{padding-left: 10%!important; padding-right: 10%!important;
 		p{margin-bottom: 1.5em!important;}
 		.fusion-button{margin-top: 10px!important; margin-bottom: 60px!important;}
 		.fusion-imageframe{margin-top: 0!important; margin-bottom: 40px!important;}
@@ -667,12 +672,6 @@ iframe{border:none!important;}
 #field_1_2, #field_1_6{min-width: 100%!important; width:100%;}
 
 
-
-
-
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* MEDIA QUERIES 1200px ///////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -682,48 +681,33 @@ iframe{border:none!important;}
 
 	/* Mobile Header */
 	.fusion-mobile-menu-design-modern{
-		.fusion-header{padding: 12px 20px!important; height: 65px!important;
+		.fusion-header{padding:20px 30px!important;height:80px!important;
 			.fusion-row{
-				
 				.fusion-mobile-menu-icons{
-					.fusion-icon{font-size: 25px; padding: 8px 0;}
+					.fusion-icon{font-size:38px;padding:0;}
 				}
-				
 				.fusion-logo{
-					.fusion-logo-link{width: 220px!important;}
+					.fusion-logo-link{width:220px!important;}
 				}
-				
-				.fusion-mobile-nav-holder{padding-top: 11px;
+				.fusion-mobile-nav-holder{padding-top:11px;
 					.fusion-menu{
 						.fusion-mobile-nav-item{
-							
-							.fusion-open-submenu{color: @white!important;
-								&:hover{color: @white!important;}
+							.fusion-open-submenu{color:@white!important;
+								&:hover{color:@white!important;}
 							}
-			
 							.menu-text{.font2();
-								.fa{font-size: 26px!important; padding-top: 12px;}
+								.fa{font-size:26px!important;padding-top:12px;}
 							}
-							
 							.sub-menu{
-								a{.font2(); background-color: #40b26f; font-size: 16px;}
+								a{.font2();background-color:#40b26f;font-size:16px;}
 							}
-							
-							
 						}
 					}
 				}
 			}
 		}
-	}
-	
+	}	
 }
-
-
-
-
-
-
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -778,12 +762,6 @@ iframe{border:none!important;}
 	.ddc-quotes{padding: 10%!important; width: 100%!important; margin: -10px 0!important; min-width: 100%!important; max-width: 100%!important; font-size: 24px!important; line-height: 32px!important;}
 	
 }
-
-
-
-
-
-
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -922,7 +900,9 @@ iframe{border:none!important;}
 	
 	/* Revolution Slider */
 	.rev_slider_wrapper{height: auto!important;
-		.rev_slider{height: auto!important; width: auto!important; min-height: 280px!important;}
+		.rev_slider{height: auto!important; width: auto!important; min-height: 280px!important;
+			.tp-parallax-wrap{top:0!important;}
+		}
 	}
 	
 	/* Revolution Slider - Quote Margins */
@@ -1131,7 +1111,7 @@ iframe{border:none!important;}
 	/* GLOBAL STYLES */
 	
 	/* Fusion Button */
-	.fusion-button{padding: 16px 25px!important; margin-top: 20px!important; font-size: 16px!important; text-decoration: none!important; text-transform: none!important; .border-radius();}
+	.fusion-button{margin-top: 20px!important;}
 	
 	/* Image Min-height */
 	.ddc-image-separator{min-height: 250px;}
@@ -1145,7 +1125,7 @@ iframe{border:none!important;}
 	.ddc-quotes{padding: 40px!important; width: 100%!important; margin: -10px 0!important; min-width: 100%!important; max-width: 100%!important; font-size: 18px!important; line-height: 24px!important;}
 	
 	/* Revolution Slider - Overlay */
-	.tp-dottedoverlay.twoxtwo {background: url(none); background-color: rgba(0, 0, 0, 0.4) !important;}
+	.tp-dottedoverlay.twoxtwo {/*background: url(none);*/ background-color: rgba(0, 0, 0, 0.4) !important;}
 	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
